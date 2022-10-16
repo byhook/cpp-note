@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <array>
 
 void handleValue(int value[], int n) {
     //这里获取的是指针的长度-32位系统为4字节-64位为8字节
@@ -19,6 +19,11 @@ int main() {
 
     //释放
     delete[] value;
+
+
+    //4.10.2
+    std::array<int, 5> arrayValue = {1, 2, 3, 4, 5};
+    std::cout << "max_size:" << arrayValue.max_size() << std::endl;
 
     return 0;
 }
