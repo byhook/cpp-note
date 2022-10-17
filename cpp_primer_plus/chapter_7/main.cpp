@@ -1,5 +1,6 @@
 #include <iostream>
 #include <array>
+#include <vector>
 
 struct travel_time {
     int hours;
@@ -25,21 +26,31 @@ travel_time sum(travel_time t1, travel_time t2) {
 /**
  * 7.10 函数指针
  */
-int think(int value){
+int think(int value) {
     return value + 100;
 }
 
 //声明函数指针
 int (*funPtr)(int value);
 
-void process(int value, int (*funPtr)(int )){
+void process(int value, int (*funPtr)(int)) {
     //int result = (*funPtr)(value); //和下面的等价
     int result = funPtr(value);
     std::cout << "funPtr:" << result << std::endl;
 }
 
-void thought(int value){
+void thought(int value) {
     std::cout << "thought:" << value << std::endl;
+}
+
+template<typename T>
+inline size_t getArray(T(&arr)) {
+    size_t length = sizeof(arr) / sizeof(arr[0]);
+    for (int i = 0; i < length; ++i) {
+        std::cout << arr[i] << std::endl;
+    }
+    std::cout << "length:" << length << std::endl;
+    return length;
 }
 
 int main() {
@@ -73,7 +84,11 @@ int main() {
     //int * const pt 是指针常量((int *)(const pt)): 可以改内容,不能改指针的地址
 
     //7.10 函数指针
-    process(10,think);
+    process(10, think);
     thought(think(100));
+
+    std::vector<int> values = {1, 2, 3};
+    int helloValues[] = {1, 2, 3, 4, 5};
+    std::cout << getArray(helloValues) << std::endl;
     return 0;
 }
