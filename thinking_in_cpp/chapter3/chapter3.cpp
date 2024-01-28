@@ -17,6 +17,7 @@ void chapter3::main() {
     for (int i = 0; i < 5; i++) {
         static_value();
     }
+    cast_value();
 }
 
 /**
@@ -26,5 +27,21 @@ void chapter3::main() {
 void chapter3::static_value() {
     //static变量的优点是在函数范围之外它是不可用的
     static int static_value = 100;
-    std::cout << static_value++ << std::endl;
+    std::cout << "static_value:"
+              << static_value++
+              << std::endl;
+}
+
+/**
+ * 3.7.11
+ * 转换运算符
+ */
+void chapter3::cast_value() {
+    int value = 1024;
+    //这是默认C的转换方式
+    unsigned long target = (unsigned long) value;
+    std::cout << "cast_value:"
+              << target
+              << std::endl;
+    //C++的显示转换
 }

@@ -20,6 +20,9 @@ private:
 
     void static_value();
 
+    //3.7.11转换运算符
+    void cast_value();
+
 };
 
 
