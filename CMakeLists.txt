@@ -10,3 +10,7 @@ set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/build)
 
 #C++编程思想
 add_subdirectory(thinking_in_cpp)
+#C++PrimerPlus
+add_subdirectory(cpp_primer_plus)
+#智能指针
+add_subdirectory(smart_pointer)
