@@ -12,6 +12,8 @@ add_executable(${PROJECT_NAME}
         ${CPP_SRC} ${CPP_HDR}
         cat.cpp
         cat.h
+        unique_ptr/unique_ptr.cpp
+        unique_ptr/unique_ptr.h
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${CPP_HDR})
