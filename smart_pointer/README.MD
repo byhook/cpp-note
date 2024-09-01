@@ -1,5 +1,5 @@
 
-# UniquePtr
+# unique_ptr
 
 1、在任何一个给定的时刻，只能有一个指针管理内存
 
@@ -14,3 +14,6 @@
 3、通过std::make_unique创建(推荐)
 
 unique_ptr可以通过get()获取地址
+
+
+unique_ptr可以转换为shared_ptr
