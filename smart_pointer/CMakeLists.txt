@@ -10,6 +10,8 @@ file(GLOB_RECURSE CPP_HDR CONFIGURE_DEPENDS *.hpp)
 
 add_executable(${PROJECT_NAME}
         ${CPP_SRC} ${CPP_HDR}
+        cat.cpp
+        cat.h
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${CPP_HDR})
