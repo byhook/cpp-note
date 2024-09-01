@@ -80,5 +80,10 @@ void shared_ptr::main() {
     std::shared_ptr<Cat> fun_cat_ptr = get_shared_ptr();
     std::cout << fun_cat_ptr.get() << std::endl;
 
+    //unique_ptr可以转换为shared_ptr
+    std::unique_ptr<Cat> unique_ptr_2(new Cat("cat_2"));
+    std::shared_ptr<Cat> shared_ptr_cat = std::move(unique_ptr_2);
+    //转换之后unique_ptr_2失效了
+
     std::cout << "================shared_ptr end================" << std::endl;
 }
